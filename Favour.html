@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adejare Favour Akintunde - Student Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #ff7e5f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .round-img {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Ensures image fills the circle properly */
+}
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23166088' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image i {
+            font-size: 70px;
+            color: var(--primary);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            flex: 1 1 300px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-text p {
+            color: var(--gray);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-card {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .social-card.snapchat:hover {
+            background: #FFFC00;
+            color: #000;
+        }
+
+        .social-card.tiktok:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .social-card.snapchat .social-icon {
+            background: #FFFC00;
+            color: #000;
+        }
+
+        .social-card.tiktok .social-icon {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2rem;
+            }
+            
+            .contact-item, .social-card {
+                flex: 1 1 100%;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile-image i {
+                font-size: 50px;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Favour.jpg" alt="round image" class="round-img">
+            </div>
+            <h1 class="name">Adejare Favour Akintunde</h1>
+            <p class="title">Computer Science Student</p>
+            <p>Matric Number: CSC/2023/81013</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section" id="contact">
+            <h2 class="section-title"><i class="fas fa-address-card"></i> Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Matric Number</h3>
+                        <p>CSC/2023/81013</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone Number</h3>
+                        <p>+2349162842781</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Program</h3>
+                        <p>Computer Science</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="social">
+            <h2 class="section-title"><i class="fas fa-share-alt"></i> Social Media Links</h2>
+            <div class="social-links">
+                <a href="https://www.snapchat.com/@phavourite000?share_id=WRWl0aO17aQ&locale=en-US" target="_blank" class="social-card snapchat">
+                    <div class="social-icon">
+                        <i class="fab fa-snapchat-ghost"></i>
+                    </div>
+                    <div>
+                        <h3>Snapchat</h3>
+                        <p>@phavourite000</p>
+                    </div>
+                </a>
+                
+                <a href="https://tiktok.com/@phavouriteeeeee" target="_blank" class="social-card tiktok">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div>
+                        <h3>TikTok</h3>
+                        <p>@phavouriteeeeee</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <p>I am a dedicated Computer Science student passionate about technology and software development. My academic journey focuses on building a strong foundation in programming, algorithms, and computer systems.</p>
+            <br>
+            <p>I enjoy exploring new technologies and applying my knowledge to solve real-world problems. When I'm not coding, I'm engaging with my social media communities on TikTok and Snapchat, sharing insights and connecting with like-minded individuals.</p>
+            <br>
+            <p>My goal is to become a skilled software developer and contribute to innovative projects that make a positive impact on society.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Adejare Favour Akintunde </p>
+            <p>Computer Science Department</p>
+            <p class="copyright">© 2023 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            observer.observe(section);
+        });
+
+        // Current year for copyright
+        document.querySelector('.copyright').innerHTML = `© ${new Date().getFullYear()} All Rights Reserved`;
+    </script>
+</body>
+</html>
